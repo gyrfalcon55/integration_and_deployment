@@ -22,8 +22,7 @@ jobs:
       #   run: python my_app.py
       
       - name: Install dependencies
-        run: installing dependencies
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: python version checking
         run: python --version
