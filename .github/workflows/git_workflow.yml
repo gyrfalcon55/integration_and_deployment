@@ -1,4 +1,4 @@
-name: Artifact Example
+name: Artifact Folder Example
 
 on:
   push:
@@ -10,11 +10,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate file
+      - name: Generate folder with files
         run: python my_app.py
 
-      - name: Upload artifact
+      - name: Upload models folder
         uses: actions/upload-artifact@v4
         with:
-          name: output-file
-          path: tests/output.txt
+          name: model-artifacts
+          path: models/
+
+  consume:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: model-artifacts
+
+      - name: Show files
+        run: |
+          ls -R
+          cat models/model.pkl
+          cat models/metrics.json
