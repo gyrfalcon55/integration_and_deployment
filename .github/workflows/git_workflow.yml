@@ -28,6 +28,6 @@ jobs:
 
       - name: Run training script
         run: |
-          python train.py \
+          python main_app.py \
           --epochs ${{ github.event.inputs.epochs }} \
           --model ${{ github.event.inputs.model }}
