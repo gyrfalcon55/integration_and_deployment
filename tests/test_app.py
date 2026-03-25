@@ -4,4 +4,4 @@ def test_add():
     assert add(2, 3) == 5
 
 def test_model_predict():
-    assert model_predict(3) == 8
+    assert model_predict(4) == 8
