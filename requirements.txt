@@ -1,4 +1,4 @@
 pytest
-scikti-learn
+scikit-learn
 pandas
 numpy
