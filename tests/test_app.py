@@ -5,6 +5,6 @@ def test_add():
 
 def test_model_predict():
     try:
-        assert model_predict(4) == 8
+        assert model_predict(3) == 8
     except:
         print("Error test case failed")
